@@ -1,1 +1,15 @@
+body {
+    background-image: url("/images/stone_mountain_pic.JPG");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(6, 6, 33);
+}
 
+#header {
+    position: absolute;
+    left: 35%;
+    right: 35%;
+    width: 320px;
+    color: darkred;
+}
