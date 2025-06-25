@@ -33,4 +33,46 @@ h1 {
     right: 10%;
     border-radius: 8px;
 }
+.firework {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: yellow;
+    border-radius: 50%;
+    animation: explode 1s infinite ease-out;
+    opacity: 0;
+}
+
+.firework1 {
+    top: 20%;
+    left: 30%;
+    animation-delay: 0s;
+}
+
+.firework2 {
+    top: 25%;
+    left: 60%;
+    animation-delay: 0.5s;
+}
+
+.firework3 {
+    top: 15%;
+    left: 45%;
+    animation-delay: 1s;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0.2);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(2.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+}
 
