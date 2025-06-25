@@ -2,73 +2,86 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #87CEEB, #001F3F);
+    background: url('stone_mountain_pic.JPG') no-repeat center center fixed;
+    background-size: cover;
     color: white;
-    text-align: center;
+    overflow: hidden;
+}
+
+.overlay {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
-    font-size: 3rem;
-    margin-top: 20px;
-    color: red;
-    text-shadow: 2px 2px blue;
-}
-
-.scene {
-    position: relative;
-    margin-top: 30px;
-}
-
-.background {
-    width: 90%;
-    max-width: 800px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    font-size: 3.5rem;
+    margin: 0;
+    color: #fff;
+    text-shadow: 3px 3px 8px red, -2px -2px 8px blue;
+    z-index: 2;
 }
 
 .flag {
-    width: 120px;
-    position: absolute;
-    top: 10%;
-    right: 10%;
-    border-radius: 8px;
+    width: 100px;
+    margin-top: 20px;
+    z-index: 2;
 }
+
 .firework {
     position: absolute;
-    width: 6px;
-    height: 6px;
-    background-color: yellow;
+    width: 10px;
+    height: 10px;
+    background: transparent;
     border-radius: 50%;
-    animation: explode 1s infinite ease-out;
-    opacity: 0;
+    box-shadow:
+        0 0 #f00,
+        20px 0 #ff0,
+        -20px 0 #0f0,
+        0 20px #0ff,
+        0 -20px #f0f,
+        14px 14px #fff,
+        -14px -14px #00f,
+        -14px 14px #ffa500,
+        14px -14px #0ff;
+    animation: boom 1.5s ease-in-out infinite;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
-.firework1 {
-    top: 20%;
-    left: 30%;
-    animation-delay: 0s;
-}
-
-.firework2 {
-    top: 25%;
-    left: 60%;
+.firework.delay-1 {
     animation-delay: 0.5s;
+    top: 30%;
+    left: 30%;
 }
 
-.firework3 {
-    top: 15%;
-    left: 45%;
+.firework.delay-2 {
     animation-delay: 1s;
+    top: 25%;
+    left: 70%;
 }
 
-@keyframes explode {
+.firework.delay-3 {
+    animation-delay: 1.5s;
+    top: 60%;
+    left: 40%;
+}
+
+@keyframes boom {
     0% {
-        transform: scale(0.2);
+        transform: scale(0.5);
         opacity: 1;
     }
     50% {
-        transform: scale(2.5);
-        opacity: 0.8;
+        transform: scale(2);
+        opacity: 0.9;
     }
     100% {
         transform: scale(0.2);
